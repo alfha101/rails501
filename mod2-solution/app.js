@@ -15,6 +15,10 @@ var shoppingList = [
     quantity: "300"
   },
   {
+    name: "Sugary Drinks",
+    quantity: "4"
+  },
+  {
     name: "Chocolate",
     quantity: "5"
   },
