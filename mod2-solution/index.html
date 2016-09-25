@@ -51,7 +51,6 @@
      <li ng-repeat="item in bought.boughtList">{{$index + 1}}. Bought {{item.quantity}} of {{item.name}}</li>
      </ul>
      <div ng-if="bought.boughtList.length==0" class="emptyMessage">Nothing bought yet.</div>
-     <div ng-hide="!list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
     </div>
   </div>
 </div>
