@@ -1,0 +1,42 @@
+<div id="main-content" class="container">
+
+  <h2 id="menu-categories-title" class="text-center">My Info</h2><br>
+  <div ng-if = "infoCtrl.registered">
+    First Name: {{infoCtrl.info.firstname}} <br>
+    Last Name: {{infoCtrl.info.lastname}} <br>
+    Email: {{infoCtrl.info.email}} <br>
+    Phone: {{infoCtrl.info.phone}} <br>
+
+    <p>Favorite dish :</p>
+    <div class="menu-item-tile col-md-6" ng-if="infoCtrl.dish"><br>
+      <div class="row">
+        <div class="col-sm-5">
+
+          <div class="menu-item-photo">
+            <div>{{infoCtrl.menuItem.short_name}}</div>
+            <img class="img-responsive" width="250" height="150"
+                ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.menuItem.short_name}}.jpg" alt="{{infoCtrl.menuItem.name}}">
+          </div>
+
+          <div class="menu-item-price">{{infoCtrl.menuItem.price_small | currency}}
+            <span> {{infoCtrl.menuItem.small_portion_name}}</span>
+            {{infoCtrl.menuItem.price_large | currency}}
+            <span>{{infoCtrl.menuItem.large_portion_name}}</span>
+          </div>
+        </div>
+
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{infoCtrl.menuItem.name}}</h3>
+          <p class="menu-item-details">{{infoCtrl.menuItem.description}}</p>
+        </div>
+      </div>
+      <hr class="visible-xs">
+    </div>
+
+  </div>
+
+  <div ng-if ="infoCtrl.registered==false" class="text-center">
+      <a ui-sref="public.signup" style= "color :#ffffff">Not Signed Up Yet. Please, Sign Up Now!</a>
+  </div>
+
+</div>
